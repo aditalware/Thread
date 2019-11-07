@@ -1,0 +1,35 @@
+public class thread3 extends Thread
+{
+public void run()
+{
+for(int i=0;i<5;i++)
+{
+System.out.println(Thread.currentThread().getName() + " "+i);//to know which thread is working
+try {
+    Thread.sleep(1000);
+} catch (Exception e) {
+    //TODO: handle exception
+}
+
+}
+
+}
+
+public static void main(String args[])
+{
+    thread3 a=new thread3();
+    thread3 b=new thread3();
+    a.setName("Thread A");
+    b.setName("Thread B");
+    a.start();//isme run ko call karne ka prototype hai
+    //only agar run call kiya to thread nahi ban payega
+    // try {
+    //     a.join();
+    // } catch (Exception e) {
+    //     //TODO: handle exception
+    // }
+    b.start();
+    
+}
+
+}
